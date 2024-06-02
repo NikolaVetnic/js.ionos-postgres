@@ -22,20 +22,20 @@ Copy the SSH pair's public key to jumphost:
 Connect to `enmeshed` database via pgAdmin using the following data:
 
 ```yaml
-	Connection:
-	  Host name/address: 2.2.2.9 # Data Center -> Databases -> Postgres Clusters -> PostgreSQL_cluster -> Connections IP
-	  Port: 5432
-	  Maintenance database: postgres
-	  Username: user # defined in main.tf
-	  Password: Password
+Connection:
+    Host name/address: 2.2.2.9 # Data Center -> Databases -> Postgres Clusters -> PostgreSQL_cluster -> Connections IP
+    Port: 5432
+    Maintenance database: postgres
+    Username: user # defined in main.tf
+    Password: Password
 
-	SSH Tunnel:
-	  Use SSH tunneling: true
-	  Tunnel host: 1.1.1.44 # server01 -> Network tab -> nic_public Primary IPv4
-	  Tunnel port: 22 # default
-	  Username: root # default username of Ubuntu on server01
-	  Authentication: Identity file
-	  Identity file: path-to-id_rsa-file # the private key
+SSH Tunnel:
+    Use SSH tunneling: true
+    Tunnel host: 1.1.1.44 # server01 -> Network tab -> nic_public Primary IPv4
+    Tunnel port: 22 # default
+    Username: root # default username of Ubuntu on server01
+    Authentication: Identity file
+    Identity file: path-to-id_rsa-file # the private key
 ```
 
 Once connected, run the following SQL script via pgAdmin (note that the script is only valid for this particular scenario as all users are granted all privileges):
